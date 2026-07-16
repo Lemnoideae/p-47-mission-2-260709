@@ -25,7 +25,10 @@ class WiseSayingController {
         return new int[]{-1, -1};
     }
 
-    void printCommand() {System.out.print("명령) ");}
+    String printAndInputCommand(Scanner scanner) {
+        System.out.print("명령) ");
+        return scanner.nextLine();
+    }
 
     String printAndInputContent(Scanner scanner) {
         System.out.print("명언 : ");

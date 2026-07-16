@@ -39,8 +39,7 @@ class App {
 
     private void scanFrontSubstring() {
         while (true) {
-            controller.printCommand();
-            command = scanner.nextLine();
+            this.command = controller.printAndInputCommand(scanner);
             switch (command.substring(0, 2)) {
                 case "종료", "등록", "목록", "삭제", "수정", "빌드": return;
                 default: controller.printCommandIsNotExisted();
