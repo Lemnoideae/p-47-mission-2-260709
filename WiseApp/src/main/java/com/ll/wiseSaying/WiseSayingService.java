@@ -31,12 +31,12 @@ class WiseSayingService {
 
     void buildList(WiseSayingController controller,
                    TreeMap<Integer, WiseSaying> wise_map,
-                   Path lastId_path, Path data_path) throws IOException {
+                   DbPath db_path) throws IOException {
         String lastId_str = Integer.toString(wise_map.lastEntry().getValue().getId());
         String json_str = writeObjectToJson(wise_map);
 
-        Files.write(lastId_path, lastId_str.getBytes());
-        Files.writeString(data_path, json_str);
+        Files.write(db_path.last_id, lastId_str.getBytes());
+        Files.writeString(db_path.data, json_str);
 
         controller.printBuildCompleted();
     }
