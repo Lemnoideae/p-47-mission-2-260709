@@ -98,19 +98,18 @@ class WiseSayingService {
     }
 
     String writeObjectToJson(TreeMap<Integer, WiseSaying> wise_map) {
-        if (wise_map == null || wise_map.isEmpty()) return "[]";
-
-        StringBuilder sb = new StringBuilder();
+        if (wise_map.isEmpty()) return "[]";
+        sb.setLength(0);
         sb.append("[\n");
 
         int idx = 0;
         int size = wise_map.size();
         for (Map.Entry<Integer, WiseSaying> entry : wise_map.entrySet()) {
-            WiseSaying currentWise = entry.getValue();
+            WiseSaying current_wise = entry.getValue();
 
-            final String id = String.valueOf(currentWise.getId());
-            final String content = currentWise.getContent();
-            final String author = currentWise.getAuthor();
+            final String id = String.valueOf(current_wise.getId());
+            final String content = current_wise.getContent();
+            final String author = current_wise.getAuthor();
 
             sb.append("  {\n");
             sb.append("    \"id\": ").append(id).append(",\n");
