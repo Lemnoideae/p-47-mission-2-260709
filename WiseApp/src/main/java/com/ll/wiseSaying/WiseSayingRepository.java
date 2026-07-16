@@ -21,10 +21,10 @@ class WiseSayingRepository {
     void buildList(WiseSayingController controller) throws IOException {
         service.buildList(controller, wise_map, db_path);
     }
-    public void modifyWise(Scanner scanner, WiseSayingController controller, final int id) {
+    void modifyWise(Scanner scanner, WiseSayingController controller, final int id) {
         service.modifyWise(scanner, controller, wise_map, id);
     }
-    public void deleteWise(WiseSayingController controller, final int id) {
+    void deleteWise(WiseSayingController controller, final int id) {
         service.deleteWise(controller, wise_map, id);
     }
 

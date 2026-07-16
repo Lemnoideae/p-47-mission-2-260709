@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Scanner;
 
 class App {
-    public void run() throws IOException {
+    void run() throws IOException {
         controller.printEntranceMessage();
 
         while (true) {
@@ -23,7 +23,7 @@ class App {
         }
     }
 
-    public App() throws IOException {
+    App() throws IOException {
         scanner = new Scanner(System.in);
         controller = new WiseSayingController();
         repository = new WiseSayingRepository(

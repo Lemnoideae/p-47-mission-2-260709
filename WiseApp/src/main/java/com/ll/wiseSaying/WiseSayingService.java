@@ -65,15 +65,15 @@ class WiseSayingService {
             controller.printIdWiseIsNotExisted(id);
             return;
         }
-        WiseSaying currentWise = wise_map.get(id);
+        WiseSaying current_wise = wise_map.get(id);
 
-        controller.printPrevContent(currentWise.getContent());
+        controller.printPrevContent(current_wise.getContent());
         String new_content = controller.printAndInputContent(scanner);
 
-        controller.printPrevAuthor(currentWise.getAuthor());
+        controller.printPrevAuthor(current_wise.getAuthor());
         String new_author = controller.printAndInputAuthor(scanner);
 
-        currentWise.modifyWise(new_content, new_author);
+        current_wise.modifyWise(new_content, new_author);
     }
     void deleteWise(WiseSayingController controller,
                     TreeMap<Integer, WiseSaying> wise_map, final int id) {

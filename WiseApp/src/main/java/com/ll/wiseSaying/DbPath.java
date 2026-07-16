@@ -11,6 +11,9 @@ class DbPath {
         this.checkPaths();
     }
 
+    final Path last_id;
+    final Path data;
+
     private void checkPaths() throws FileNotFoundException {
         String absolutePath;
         if (Files.notExists(this.data)) {
@@ -22,8 +25,5 @@ class DbPath {
             throw new FileNotFoundException("Last Id file not found : " + absolutePath);
         }
     }
-
-    final Path last_id;
-    final Path data;
 
 }
